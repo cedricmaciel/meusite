@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7Riven - Indie Game Studio</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(200deg, #000000, #021d38, #340442);
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            
+           
+    
+        }
+
+        header .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        header img {
+            height: 65px;
+            width: 50px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00c8ff;
+            text-shadow: 0 0 10px #00c8ff;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .title-main {
+            text-align: center;
+            font-size: 2.5rem;
+            text-shadow: 0 0 12px #009dff;
+            margin-bottom: 20px;
+        }
+        .seven-glow {
+   background: linear-gradient(200deg,  #a709c7,#4db8ff );
+   
+        -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    text-shadow:
+        0 0 12px #009dff,
+        0 0 20px #00aaff,
+        0 0 35px #631cd6,
+        0 0 55px #9900ff;
+}
+        .description {
+            text-align: center;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+
+        .divider {
+    width: 100%;
+    height: 2px;
+    background: #49c5ff;
+    margin: 40px 0;
+
+    box-shadow:
+        0 0 6px #3db9ff,
+        0 0 12px #49c5ff,
+        0 0 20px #49c5ff;
+
+    animation: neonPulse 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neonPulse {
+    from {
+        box-shadow:
+            0 0 6px #3db9ff,
+            0 0 12px #49c5ff,
+            0 0 20px #49c5ff;
+    }
+    to {
+        box-shadow:
+            0 0 12px #3db9ff,
+            0 0 20px #49c5ff,
+            0 0 35px #49c5ff;
+    }
+}
+
+
+        .section-title {
+            font-size: 1.8rem;
+            text-shadow: 0 0 10px #00c8ff;
+            margin-bottom: 20px;
+        }
+        .game-title {
+    font-size: 1.8rem;       /* aumenta o tamanho */
+    text-align: left;        /* força alinhamento à esquerda */
+    width: 100%;             /* garante que ocupe toda a linha */
+    margin: 0 0 10px 0;      /* aproxima da imagem */
+}
+
+
+        .card {
+            padding: 20px;
+            
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin-bottom: 25px;
+
+            display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 25px;
+        }
+        .logoGames{
+
+            width: 400px;
+        }
+        .card-left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.card-right {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* espaço entre as três partes */
+}
+.card-description p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+
+
+.store-logo {
+    transform: translateY(-35px);  /* sobe sem sair da div */
+    width: 240px;
+    cursor: pointer;
+    height: auto;   /* mantém proporção */
+    
+}
+
+.card-tech {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    /* empurra para a direita */
+    justify-content: flex-end;
+
+    /* sobe e encosta no canto inferior direito */
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+/* deixa os dois logos exatamente iguais */
+.tech-logo {
+    width: 60px;      /* ajuste aqui o tamanho que você quiser */
+    height: 60px;     /* força ambas a terem o MESMO tamanho */
+    object-fit: contain;
+    opacity: 0.9;
+}
+
+        
+        .contact-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 25px; /* espaço entre os itens */
+}
+.carousel {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.carousel-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+    color: #0682d4;
+}
+.carousel-btn:active {
+    transform: scale(0.92);
+    color: #66d1ff;
+    text-shadow: 0 0 15px #66d1ff, 0 0 30px #7fe0ff;
+}
+
+.carousel-track {
+    display: flex;
+    overflow: hidden;
+    width: 270px;
+   
+}
+
+.carousel-track img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+    padding: 5px;
+}
+
+.carousel-track img:hover {
+    transform: scale(1.05);
+}
+
+
+/* ------- MURAL DE IMAGENS EM 5 COLUNAS ------- */
+.card-mural{
+    padding: 20px;
+            
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            margin-bottom: 25px;
+
+      
+    
+    gap: 25px;
+}
+.assets-mural {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 colunas fixas */
+    gap: 12px;
+    margin-top: 15px;
+}
+
+/* Cada imagem do mural */
+.assets-mural img {
+    width: 100%;
+    height: 120px;              /* altura fixa para padronizar */
+    object-fit: cover;          /* preenche o espaço mantendo proporção */
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background-color: #0002;    /* caso alguma imagem tenha transparência */
+}
+
+/* Efeito ao passar o mouse */
+.assets-mural img:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 12px #6bd1ff;
+}
+
+
+
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal img {
+    width: 800px;
+    border-radius: 12px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / MENU -->
+    <header id="home">
+        <div class="logo-area" >
+            <!-- Substitua o src pela imagem do seu logo -->
+            <img src="assets/logo00.png" alt="7Riven Logo">
+            <h1><span class="seven-glow">7</span>Riven • Indie Game Studio</h1>
+        </div>
+
+        <nav>
+            
+            <a href="#games">Games</a>
+            <a href="#games">Assets Art</a>
+            <a href="#apps">Apps</a>
+            <a href="#web">Web</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <div class="container" >
+        <h2 class="title-main">Welcome to <span class="seven-glow">7</span>Riven</h2>
+        <p class="description">
+            We are an independent indie game studio.  
+            Creating unique games, applications, software and web pages with creativity and passion.
+        </p>
+
+        <div class="divider"></div>
+
+        <!-- GAMES SECTION -->
+        <section id="games">
+            <h3 class="section-title">Games</h3>
+
+            <!-- CARD 1 -->
+            <div class="card">
+                <div class="card-left">
+                    <h4 class="game-title">BugFront</h4>
+            
+                    <img src="assets/bugfrontlogo.png" class="logoGames">
+            
+                    <!-- CARROSSEL -->
+                    <div class="carousel">
+                        <div class="carousel-btn" onclick="moveCarousel(this, -1)">&#9664;</div>
+            
+                        <div class="carousel-track">
+                            <img src="assets/gal1.png" onclick="openModal(this.src)">
+                            <img src="assets/gal2.png" onclick="openModal(this.src)">
+                            <img src="assets/gal3.png" onclick="openModal(this.src)">
+                            <img src="assets/gal4.png" onclick="openModal(this.src)">
+                        </div>
+            
+                        <div class="carousel-btn" onclick="moveCarousel(this, 1)">&#9654;</div>
+                    </div>
+                </div>
+            
+                <div class="card-right">
+                    <p>
+                        Description of the game, platform, download links, etc.  
+                        This text stays on the right side while the image remains on the left.
+                    </p>
+                </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="card">
+                <div class="card-left">
+                    <h4 class="game-title">Azure Rider</h4>
+            
+                    <img src="assets/riderlogo.png" class="logoGames">
+            
+                    <!-- CARROSSEL -->
+                    <div class="carousel">
+                        <div class="carousel-btn" onclick="moveCarousel(this, -1)">&#9664;</div>
+            
+                        <div class="carousel-track">
+                            <img src="assets/rider1.jpeg" onclick="openModal(this.src)">
+                            <img src="assets/rider2.jpeg" onclick="openModal(this.src)">
+                            <img src="assets/rider3.jpeg" onclick="openModal(this.src)">
+                            <img src="assets/rider4.png" onclick="openModal(this.src)">
+                            <img src="assets/rider5.png" onclick="openModal(this.src)">
+
+                        </div>
+            
+                        <div class="carousel-btn" onclick="moveCarousel(this, 1)">&#9654;</div>
+                    </div>
+                </div>
+            
+              <div class="card-right">
+
+                      <!-- DESCRIÇÃO -->
+               <div class="card-description">
+                  <p>
+                    Get ready for an intense arcade space shooter! Azure Rider brings fast action, heavy-metal energy, and three explosive stages filled with enemies, challenges, and boss battles. Pilot your starship through space, destroy waves of enemy ships, and stay alert — speed is everything. Each phase introduces new obstacles and faster enemy formations that will test your reflexes.
+                  </p>
+                 </div>
+          
+                       <!-- GOOGLE PLAY -->
+                 <div class="card-store">
+            
+                 <img src="assets/googleplaylogo.png" class="store-logo">
+                 </div>
+
+                 <!-- TECNOLOGIAS -->
+                   <div class="card-tech">
+                     <img src="assets/unitylogo.png" class="tech-logo">
+                     <img src="assets/blenderlogo.png" class="tech-logo">
+                   </div>
+               </div>
+
+            </div>
+
+        </section>
+
+        <div class="divider"></div>
+        
+        <!-- Asstes SECTION -->
+        <section id="apps">
+            <h3 class="section-title">Assets Arts</h3>
+
+
+            <div class="card-mural">
+                <h4>Assets created with Blender 3D by Cedric Maciel</h4>
+            
+                <div class="assets-mural">
+                    <img src="assets/arts/sword2.png" onclick="openModal(this.src)">
+                    <img src="assets/arts/gun.png" onclick="openModal(this.src)">
+                    <img src="assets/arts/nav.png" onclick="openModal(this.src)">
+                    <img src="assets/arts/Spaceship.png" onclick="openModal(this.src)">
+                    <img src="assets/arts/gun1-03.png" onclick="openModal(this.src)">
+                    <img src="assets/arts/spaceship05-03.png" onclick="openModal(this.src)">
+                    <img src="assets/arts/gun3.png" onclick="openModal(this.src)">
+                    <img src="assets/arts/SWORD.png" onclick="openModal(this.src)">
+                    <img src="assets/arts/gun3-Rocket-Launcher.png" onclick="openModal(this.src)">
+                    <img src="assets/arts/ships.png" onclick="openModal(this.src)">
+                    <img src="assets/arts/assteshouse.png" onclick="openModal(this.src)">
+                    <img src="assets/arts/assteshouse2.png" onclick="openModal(this.src)">
+                    <!-- Você pode adicionar quantas imagens quiser -->
+                </div>
+            </div>
+            
+        </section>
+        <div class="divider"></div>
+
+        <!-- APPS SECTION -->
+        <section id="apps">
+            <h3 class="section-title">Applications</h3>
+
+            <div class="card">
+                <h4>Application #1</h4>
+                <p>Description of your app here.</p>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- WEB SECTION -->
+        <section id="web">
+            <h3 class="section-title">Web Projects</h3>
+
+            <div class="card">
+                <h4>Website / System #1</h4>
+                <p>Description of your website/software.</p>
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <h3 class="section-title">Contact</h3>
+            <div class="card">
+                <div class="contact-row">
+                    <p>Email: <strong>sevenriven@outlook.com</strong></p>
+        
+                    <p>
+                        <a href="https://www.instagram.com/_7riven/" target="_blank">
+                            <img src="assets/instagram.png" alt="Instagram" style="width:200px;">
+                        </a>
+                    </p>
+        
+                    <p>
+                        <a href="https://github.com/cedricmaciel" target="_blank">
+                            <img src="assets/github.png" alt="GitHub" style="width:50px;">
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        © 2025 - 7Riven - All Rights Reserved.
+    </footer>
+
+    <div id="imgModal" class="modal" onclick="closeModal()">
+        <span class="modal-close" onclick="closeModal(event)">×</span>
+        <img id="modalImage" src="">
+    </div>
+
+    <script src="assets/Scritps/script.js"></script>
+    <script src="assets/Scritps/scriptcarosel.js"></script>
+</body>
+</html>
